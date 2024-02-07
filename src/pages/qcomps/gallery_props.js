@@ -1,17 +1,45 @@
+function Avatar({person, width, height}) {
+  return (
+      <img
+          className="avatar"
+          src={'https://i.imgur.com/' + person.imageId + 's.jpg'}
+          alt={person.name}
+          width={width}
+          height={height}
+      />
+  );
+}
+
+function Bio({profession, awards, discroverd}) {
+  return (
+      <ul>
+        <li>
+          <b>Profession: </b>
+            {profession}
+        </li>
+        <li>
+          <b>Awards: 4 </b>
+            {awards}
+        </li>
+        <li>
+          <b>Discovered: </b>
+            {discroverd}
+        </li>
+      </ul>
+  );
+}
+
 export default function Gallery() {
   return (
-    <div>
-      <h1>Notable Scientists</h1>
-      <section className="profile">
-        <h2>Maria Skłodowska-Curie</h2>
-        <img
-          className="avatar"
-          src='https://i.imgur.com/szV5sdGs.jpg'
-          alt="Maria Skłodowska-Curie"
-          width={70}
-          height={70}
-        />
-        <ul>
+      <div>
+        <h1>Scientists</h1>
+        <section className="profile">
+          <h2>Maria Skłodowska-Curie</h2>
+            <Avatar
+                person={{name: 'Maria Skłodowska-Curie', imageId: 'szV5sdG'}}
+                width={70}
+                height={70} />
+          <ul>
           <li>
             <b>Profession: </b>
             physicist and chemist
